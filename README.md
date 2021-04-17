@@ -5,3 +5,4 @@ on the raspberry
 
 For this one you need to install "go" on your rapberry pi and clone this run it, it should work :)
 
+androi d app will be uploaded soon
